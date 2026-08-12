@@ -109,10 +109,18 @@
     box-shadow: 0 6px 14px rgba(0,0,0,.4), inset 0 -4px 8px rgba(0,0,0,.25), inset 0 3px 5px rgba(255,255,255,.25);
     z-index:4;
     transition: transform .5s ease, opacity .5s ease;
-    font-family:'Ma Shan Zheng', cursive;
-    color: #f3d9b8;
-    font-size:30px;
-    letter-spacing:1px;
+  }
+  .seal::before{
+    content:"";
+    width:34px; height:34px;
+    border-radius:50%;
+    border:1.5px solid rgba(243,217,184,.55);
+  }
+  .seal::after{
+    content:"";
+    position:absolute; inset:6px;
+    border-radius:50%;
+    border:1px solid rgba(243,217,184,.3);
   }
   .envelope.open .seal{
     transform: translate(-50%,-50%) scale(0);
@@ -183,18 +191,16 @@
     background-position:center;
     opacity:0;
     transform: scale(1.06);
-    animation: bgCycle 24s infinite;
+    animation: bgCycle 16s infinite;
     filter: saturate(1.02);
   }
   .bg-slide:nth-child(1){ animation-delay: 0s; }
-  .bg-slide:nth-child(2){ animation-delay: 6s; }
-  .bg-slide:nth-child(3){ animation-delay: 12s; }
-  .bg-slide:nth-child(4){ animation-delay: 18s; }
+  .bg-slide:nth-child(2){ animation-delay: 8s; }
   @keyframes bgCycle{
     0%{ opacity:0; transform:scale(1.06); }
-    4%{ opacity:1; transform:scale(1.0); }
-    21%{ opacity:1; transform:scale(1.0); }
-    25%{ opacity:0; transform:scale(1.0); }
+    6%{ opacity:1; transform:scale(1.0); }
+    44%{ opacity:1; transform:scale(1.0); }
+    50%{ opacity:0; transform:scale(1.0); }
     100%{ opacity:0; }
   }
   .bg-overlay{
@@ -304,7 +310,7 @@
           <div class="env-shadow-fold"></div>
         </div>
         <div class="env-flap"></div>
-        <div class="seal">谢</div>
+        <div class="seal"></div>
       </div>
       <div class="envelope-hint">
         <div class="title">见字如面</div>
@@ -318,8 +324,6 @@
     <div class="bg-stage">
       <div class="bg-slide" style="background-image:url('images/photo1.jpg'), linear-gradient(135deg,#4a3826,#241a12);"></div>
       <div class="bg-slide" style="background-image:url('images/photo2.jpg'), linear-gradient(135deg,#3c2f22,#1a130d);"></div>
-      <div class="bg-slide" style="background-image:url('images/photo3.jpg'), linear-gradient(135deg,#443322,#201812);"></div>
-      <div class="bg-slide" style="background-image:url('images/photo4.jpg'), linear-gradient(135deg,#392a1f,#1c140e);"></div>
       <div class="bg-overlay"></div>
       <div class="bg-vignette"></div>
     </div>
